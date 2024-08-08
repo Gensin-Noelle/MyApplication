@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--网格布局-->
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="2"
+    android:rowCount="2"
+    tools:context=".GridLayout">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_row="0"
+        android:layout_rowWeight="1"
+        android:layout_column="0"
+        android:layout_columnWeight="1"
+        android:background="@color/purple_200"
+        android:gravity="center"
+        android:text="purple_200"
+        android:textSize="17sp" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_columnWeight="1"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:gravity="center"
+        android:background="#ffaa00"
+        android:text="橙色"
+        android:textSize="17sp"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_columnWeight="1"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:gravity="center"
+        android:background="#00ff00"
+        android:text="绿色"
+        android:textSize="17sp"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_columnWeight="1"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:gravity="center"
+        android:background="@color/teal_200"
+        android:text="teal_200"
+        android:textSize="17sp"/>
+
+</GridLayout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication">
+        <activity
+            android:name=".DrawableShape"
+            android:exported="false" />
+        <activity
+            android:name=".MetaData"
+            android:exported="false" />
+        <activity
+            android:name=".ActResponse"
+            android:exported="false" />
+        <activity
+            android:name=".ActRequest"
+            android:exported="true" />
+        <activity
+            android:name=".LoginSuccessful"
+            android:exported="false" />
+        <activity
+            android:name=".LoginInput"
+            android:exported="true" />
+        <activity
+            android:name=".ButtonStyle"
+            android:exported="false" />
+        <activity
+            android:name=".ScrollView"
+            android:exported="false" />
+        <activity
+            android:name=".GridLayout"
+            android:exported="false" />
+        <activity
+            android:name=".RelativeLayout"
+            android:exported="false" />
+        <activity
+            android:name=".LinearLayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+        </activity>
+        <activity
+            android:name=".ActStartActivity"
+            android:exported="true">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+
+
+            <!-- <meta-data -->
+            <!-- android:name="android.app.shortcuts" -->
+            <!-- android:resource="@xml/shortcuts" /> -->
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="app_content">你好，世界!</string>
+    <string name="app_content2">刻晴</string>
+    <string name="button_text">下一个</string>
+    <string name="first_short">first</string>
+    <string name="first_long">启停活动</string>
+    <string name="second_short">second</string>
+    <string name="second_long">发送信息</string>
+    <string name="third_short">third</string>
+    <string name="third_long">登陆返回</string>
+</resources>
