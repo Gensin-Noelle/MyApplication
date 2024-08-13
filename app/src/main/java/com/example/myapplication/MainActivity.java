@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         ImageButton button = findViewById(R.id.button);
         button.setOnClickListener(v -> {
             Intent intent = new Intent();
-            intent.setClass(MainActivity.this, DrawableShape.class);
+            intent.setClass(MainActivity.this, CheckBoxActivity.class);
             startActivity(intent);
         });
 
