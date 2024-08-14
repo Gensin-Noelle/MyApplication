@@ -26,7 +26,7 @@ public class CheckBoxActivity extends AppCompatActivity {
             buttonView.setText(desc);
             //打开一个新的界面
             Intent intent = new Intent();
-            intent.setClass(this, SwitchDefaultActivity.class);
+            intent.setClass(this, RadioHorizontalActivity.class);
             startActivity(intent);
         });
     }
