@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShareWriteActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 姓名输入 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="8dp">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="姓名:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/common_font_size"/>
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/item_layout_height"
+                android:layout_weight="1"
+                android:hint="请输入姓名"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/common_font_size"
+                android:inputType="text"/>
+        </LinearLayout>
+
+        <!-- 年龄输入 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="8dp">
+
+            <TextView
+                android:id="@+id/tv_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="年龄:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/common_font_size"/>
+
+            <EditText
+                android:id="@+id/et_age"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/item_layout_height"
+                android:layout_weight="1"
+                android:hint="请输入年龄"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/common_font_size"
+                android:inputType="number"/>
+        </LinearLayout>
+
+        <!-- 身高输入 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="8dp">
+
+            <TextView
+                android:id="@+id/tv_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="身高:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/common_font_size"/>
+
+            <EditText
+                android:id="@+id/et_height"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/item_layout_height"
+                android:layout_weight="1"
+                android:hint="请输入身高"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/common_font_size"
+                android:inputType="number"/>
+        </LinearLayout>
+
+        <!-- 体重输入 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="8dp">
+
+            <TextView
+                android:id="@+id/tv_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="体重:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/common_font_size"/>
+
+            <EditText
+                android:id="@+id/et_weight"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/item_layout_height"
+                android:layout_weight="1"
+                android:hint="请输入体重"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/common_font_size"
+                android:inputType="number"/>
+        </LinearLayout>
+
+        <!-- 已婚复选框 -->
+        <CheckBox
+            android:id="@+id/cb_married"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="已婚"
+            android:textSize="@dimen/common_font_size"
+            android:paddingVertical="8dp"/>
+
+        <!-- 保存按钮 -->
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="保存到共享参数"
+            android:textSize="@dimen/button_font_size"
+            android:layout_gravity="center_vertical"
+            android:paddingVertical="12dp"/>
+    </LinearLayout>
+</ScrollView>

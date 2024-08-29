@@ -2,7 +2,9 @@ package com.example.login;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -33,7 +35,7 @@ public class LoginMainActivity extends AppCompatActivity {
         @Override
         public void onActivityResult(ActivityResult o) {
             Intent intent = o.getData();
-            if (intent != null && o.getResultCode() == Activity.RESULT_OK){
+            if (intent != null && o.getResultCode() == Activity.RESULT_OK) {
                 String newPassword = intent.getStringExtra("newPassword");
                 //更新密码
                 password = newPassword;
@@ -44,6 +46,10 @@ public class LoginMainActivity extends AppCompatActivity {
     String password = "111111";
     String mVerifyCode;
     String phoneNum;
+    SharedPreferences preferences;
+    EditText et_password;
+    EditText et_phone;
+    CheckBox cb_remember;
 
     @SuppressLint("DefaultLocale")
     @Override
@@ -55,11 +61,14 @@ public class LoginMainActivity extends AppCompatActivity {
         Button btn_forget = findViewById(R.id.btn_verify_code);
         Button btn_login = findViewById(R.id.btn_login);
         TextView tv_password = findViewById(R.id.tv_password);
-        CheckBox cb_remember = findViewById(R.id.cb_remember);
-        EditText et_password = findViewById(R.id.et_password);
-        EditText et_phone = findViewById(R.id.et_phone);
+        cb_remember = findViewById(R.id.cb_remember);
+        et_password = findViewById(R.id.et_password);
+        et_phone = findViewById(R.id.et_phone);
         RadioButton rb_password = findViewById(R.id.rb_password);
         RadioButton rb_verify_code = findViewById(R.id.rb_verify_code);
+        preferences = getSharedPreferences("config", Context.MODE_PRIVATE);
+
+        reload();
 
         //给rg_login设置单选监听器
         rg_login.setOnCheckedChangeListener((group, checkedId) -> {
@@ -107,6 +116,17 @@ public class LoginMainActivity extends AppCompatActivity {
             }
         });
 
+        //设置记住密码事件
+        cb_remember.setOnCheckedChangeListener((l, isChecked) -> {
+            if (isChecked) {
+                @SuppressLint("CommitPrefEdits") SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("phoneNum", phoneNum);
+                editor.putString("password", password);
+                editor.putBoolean("isRemember", cb_remember.isChecked());
+                editor.apply();
+            }
+        });
+
         //登录按钮设置监听事件
         btn_login.setOnClickListener(v -> {
             if (rb_password.isChecked()) {
@@ -126,6 +146,17 @@ public class LoginMainActivity extends AppCompatActivity {
             }
 
         });
+    }
+
+    private void reload() {
+        if (preferences.getBoolean("isRemember", false)) {
+            String phoneNum = preferences.getString("phoneNum", "");
+            String password = preferences.getString("password", "");
+            et_phone.setText(phoneNum);
+            et_password.setText(password);
+            cb_remember.setChecked(preferences.getBoolean("isRemember", false));
+
+        }
     }
 
     private void loginSuccess() {
@@ -163,6 +194,9 @@ public class LoginMainActivity extends AppCompatActivity {
 
         @Override
         public void afterTextChanged(Editable s) {
+            if (et_phone != null){
+                phoneNum = et_phone.getText().toString();
+            }
             if (s.length() == mMaxLength) {
                 ViewUtil.hideOneInputMethod(LoginMainActivity.this, mView);
             }

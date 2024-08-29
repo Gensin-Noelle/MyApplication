@@ -9,6 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".ShareWriteActivity"
+            android:exported="false" />
+        <activity
             android:name=".EditSimpleActivity"
             android:exported="false" />
         <activity
